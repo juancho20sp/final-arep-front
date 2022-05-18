@@ -1,8 +1,8 @@
 const put = async (endpoint = '', data = {}) => {
-    const BASE_URL = 'localhost:5000';
+    const BASE_URL = 'http://localhost:5000/api/v1';
 
     try {
-        const response = await fetch(`${BASE_URL}/test`, {
+        const response = await fetch(`${BASE_URL}/file`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
