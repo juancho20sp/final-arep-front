@@ -1,0 +1,52 @@
+.table-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+}
+
+.table-container > table {
+    flex: 1;
+    height: calc();
+    margin-top: 1rem;
+    width: 100%;
+}
+
+tbody {
+    height: 100%;
+    width: 100%;
+}
+
+tr {
+    display: flex;
+    height: 3rem;
+}
+
+th {
+    border: 1px solid black;
+    flex: 1;
+    height: 100%;
+}
+
+td {
+    border: 1px solid black;
+    flex: 3;
+    height: 100%;
+}
+
+th, td {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.3);
+}

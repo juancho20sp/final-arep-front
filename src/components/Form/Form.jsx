@@ -1,11 +1,10 @@
 import React from 'react';
 import './Form.css';
 
-const Form = () => {
+const Form = ({ fetchData, setRepoURL }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    console.log('Submitting...');
+    fetchData();
   };
 
   return (
@@ -20,11 +19,12 @@ const Form = () => {
             name='input'
             id='input'
             placeholder='https://github.com/username/my-repo'
+            onChange={(e) => setRepoURL(e.target.value.trim())}
           />
         </div>
 
         <div className='row'>
-          <input type='submit' />
+          <input type='submit' value='Analizar repositorio' />
         </div>
       </form>
     </div>
