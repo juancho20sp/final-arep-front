@@ -20,34 +20,42 @@ const Main = () => {
     setShowForm(false);
 
     try {
-      const data = put('endpoint', { repoURL });
-      setTableData(data);
-      setShowTable(true);
+      /* alert(repoURL); */
+      const data = put('file', { "url": repoURL });
+      
+      data.then( response =>{
+        /* alert(JSON.stringify(response)); */
+        setTableData(response);
+        setShowTable(true); 
+      }).catch(()=>{
+        setTableData({
+          comoEstaAhora1: {
+            title: 'Mi título 1',
+            value: 'My value 1',
+          },
+          comoEstaAhora2: {
+            title: 'Mi título 2',
+            value: 'My value 2',
+          },
+          comoEstaAhora3: {
+            title: 'Mi título 3',
+            value: 'My value 3',
+          },
+          comoEstaAhora4: {
+            title: 'Mi título 4',
+            value: 'My value 4',
+          },
+        });
+      });
+      
     } catch (err) {
       console.error(err);
+      
     } finally {
       setIsLoading(false);
     }
 
-    // BORRAR ESTO
-    setTableData({
-      comoEstaAhora1: {
-        title: 'Mi título 1',
-        value: 'My value 1',
-      },
-      comoEstaAhora2: {
-        title: 'Mi título 2',
-        value: 'My value 2',
-      },
-      comoEstaAhora3: {
-        title: 'Mi título 3',
-        value: 'My value 3',
-      },
-      comoEstaAhora4: {
-        title: 'Mi título 4',
-        value: 'My value 4',
-      },
-    });
+    
   };
 
   return (
